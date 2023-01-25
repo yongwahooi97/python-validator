@@ -15,7 +15,11 @@ pip install git+https://github.com/yongwahooi97/python-validator.git
 
 Features:
 
--   unique: Check uniqueness of the value if the column in data
+-   unique: Check uniqueness of the value of the column in data
+    -   data: Dataframe that used for validation
+    -   targetColumn: Column name for validation
+    -   file: Invalid output text file name
+-   require: Check null or empty value of the column in data
     -   data: Dataframe that used for validation
     -   targetColumn: Column name for validation
     -   file: Invalid output text file name
