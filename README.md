@@ -15,11 +15,16 @@ pip install git+https://github.com/yongwahooi97/python-validator.git
 
 Features:
 
--   unique: Check uniqueness of the column of the data
+-   unique: Check uniqueness of the value if the column in data
+    -   data: Dataframe that used for validation
+    -   targetColumn: Column name for validation
+    -   fileName: Output text file name for error log
+    -   filePath: Location for the output text file. E.g. ".\\Output\\" store error log in Output folder
 
 #### Demo of some of the features:
 
 ```python
+import pandas as pd
 import validator
 from validator import unique
 

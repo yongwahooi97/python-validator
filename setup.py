@@ -16,6 +16,7 @@ setup(
         install_requires=[
             'pandas',
             'numpy',
+            'datetime',
         ],         
         keywords=['python'],
         classifiers= [
