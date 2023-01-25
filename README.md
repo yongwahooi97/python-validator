@@ -18,8 +18,7 @@ Features:
 -   unique: Check uniqueness of the value if the column in data
     -   data: Dataframe that used for validation
     -   targetColumn: Column name for validation
-    -   fileName: Output text file name for error log
-    -   filePath: Location for the output text file. E.g. ".\\Output\\" store error log in Output folder
+    -   file: Invalid output text file name
 
 #### Demo of some of the features:
 
@@ -28,6 +27,6 @@ import pandas as pd
 import validator
 from validator import unique
 
-df = pd.DataFrame({'A': [2, 3, 2], 'B': [4, 5, 6]})
-unique(df, ['A', 'B'])
+df = pd.DataFrame({'ID': [1, 2, 2], 'Name': ['Alex', 'Sam', 'Ella']})
+unique(df, ['ID'])
 ```
