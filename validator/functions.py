@@ -1,5 +1,6 @@
 from datetime import datetime
 
+# Check data type for function argument/ parameters
 def check_type(dataType, key, value, file):
     if not isinstance(value, dataType):
         error_msg = 'Variable `' + str(key) + '` should be type ('
@@ -7,12 +8,25 @@ def check_type(dataType, key, value, file):
         log(file, error_msg)
         raise TypeError(error_msg)
 
+# Check column name in data
+def check_column(column, data, file):
+    if column not in data.columns:
+        log(file, "Column not found: " + column)
+        raise Exception('Column not found: ' + column)
+
+# Log file to text file
 def log(file, content):
-     date = datetime.now()
-     f = open(file + '.txt', "a")
-     print('\n========================\n', file=f)
-     print('Date: '+ date.strftime("%d/%m/%y") + '\nTime: ' + date.strftime("%X"), file=f)
-     print('\n------------\n', file=f)
-     print(content, file=f)
-     print('\n========================\n', file=f)
-     f.close()
+    try:
+        date = datetime.now()
+        f = open(file + '.txt', "a")
+        print('\n========================\n', file=f)
+        print('Date: '+ date.strftime("%d/%m/%y") + '\nTime: ' + date.strftime("%X"), file=f)
+        print('\n------------\n', file=f)
+        print(content, file=f)
+        print('\n========================\n', file=f)
+        f.close()
+    except IOError as e:
+        f = open('Error_Log.txt', "a")
+        print(e, file=f)
+        f.close()
+        raise e

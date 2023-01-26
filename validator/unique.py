@@ -1,12 +1,12 @@
 import pandas as pd
-from .functions import check_type, log
+from .functions import check_type, check_column, log
 
 # Unique validation
-# data: Data for validate
-# targetColumn: Column that required for validation 
-# file: Invalid output text file name. E.g. ".\\Output\\Unique_Error_Log" store log in Output folder
+# data: Data source for validation
+# targetColumn: Column name that requires for validation
+# file: Invalid output text file name. E.g. ".\\Output\\Error_Log" store log in Output folder
 
-def unique(data: pd.DataFrame, targetColumn: list, file = 'Unique_Error_Log'):
+def unique(data: pd.DataFrame, targetColumn: list, file = 'Error_Log'):
     # Validate parameter 
     check_type(pd.DataFrame, 'data', data, file)
     check_type(list, 'targetColumn', targetColumn, file)
@@ -16,9 +16,7 @@ def unique(data: pd.DataFrame, targetColumn: list, file = 'Unique_Error_Log'):
 
     for column in targetColumn:
         # Check column name
-        if column not in data.columns:
-            log(file, "Column not found: " + column)
-            raise Exception('Column not found: ' + column)
+        check_column(column, data, file)
 
         # Return duplicate rows
         df = data[data.duplicated([column], keep=False)]
