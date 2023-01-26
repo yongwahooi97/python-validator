@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.2' 
+VERSION = '0.0.1' 
 DESCRIPTION = 'Python validator that used to validate data during ETL process.'
 
 # Setting up
