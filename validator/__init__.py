@@ -5,3 +5,4 @@ from .end_with import end_with
 from .contains import contains
 from .exact import exact
 from .regex import regex
+from .number import number

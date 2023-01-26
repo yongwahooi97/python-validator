@@ -11,6 +11,12 @@ Rerun this command to check for and install updates .
 pip install git+https://github.com/yongwahooi97/python-validator.git
 ```
 
+Uninstall Validator
+
+```bash
+pip uninstall validator
+```
+
 ## Usage
 
 Features:
@@ -47,6 +53,12 @@ Features:
     -   data: Data source for validation
     -   targetColumn: Column name(s) that requires for validation
     -   regex: Regular expression pattern. [Online regex test](https://regex101.com/)
+    -   file: Invalid output text file name
+-   number: Validate the value of the column within given range
+    -   data: Data source for validation
+    -   targetColumn: Column name(s) that requires for validation
+    -   min: Minimum value of data. If none, set np.nan.
+    -   max: Minimum value of data If none, set np.nan.
     -   file: Invalid output text file name
 
 #### Demo of some of the features:
